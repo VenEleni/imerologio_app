@@ -49,7 +49,6 @@ export default function ChangePassword() {
         setPassword("")
         setNewPassword("")
         navigate("/")
-
     }
 
 
@@ -94,7 +93,7 @@ export default function ChangePassword() {
             </div>
             <div className={classes.btnWrapper}>
             <button className={classes.CHbtn} type='submit'>Change</button>
-            <button className={classes.CHbtn} onClick={() => handleCancel}>Cancel</button>
+            <button className={classes.CHbtn} onClick={handleCancel}>Cancel</button>
             </div>
         </form>
     </div>
