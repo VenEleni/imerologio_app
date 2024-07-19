@@ -13,11 +13,11 @@ const FRONTEND_URI = process.env.FRONTEND_URI
 app.use(express.json());
  
 app.use(cors({
-  // origin: "*",
-  origin: FRONTEND_URI, // allow your client app
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allowed methods
-  allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'], // allowed headers
-  credentials: true // if you need to send cookies or other crede
+  origin: "*",
+  // origin: FRONTEND_URI, // allow your client app
+  // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // allowed methods
+  // allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token'], // allowed headers
+  // credentials: true // if you need to send cookies or other crede
   }));
   
 
