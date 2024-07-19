@@ -11,6 +11,7 @@ const app = express();
 const PORT = process.env.PORT;
 const FRONTEND_URI = process.env.FRONTEND_URI
 
+
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'build')))
