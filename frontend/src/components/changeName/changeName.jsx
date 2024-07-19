@@ -40,22 +40,18 @@ export default function ChangeName() {
     };
 
     try {
-      const res = await axios.put(
+      await axios.put(
         `${API_URL}/update/${userData.userId}`,
         newDetails
-      );
-
-      if (res.status === 401) {
-        setError("Invalid credentials. Please try again.");
-      } else {
-        setError("Name changed successfully.");
-        setTimeout(() => {
+      ).then((res) => {
+        if (res.status === 200) {
+          alert("Name changed successfully");
           setPassword("");
-          setNewName("");
           setNewLastname("");
-          navigate("/");
-        }, 2000);
-      }
+          setNewName("");
+          navigate("/")
+          }
+      });
     } catch (error) {
       console.log(error);
       setError("An error occurred. Please try again later.");

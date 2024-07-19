@@ -81,6 +81,7 @@ export default function Register() {
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                minLength={8}
               />
               <p>
                 It must be a combination of minimum 8 letters, numbers and
