@@ -16,7 +16,6 @@ export default function Navbar({ isEditor, getAllJournals  }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleClick = () => {
-    window.location.reload();
     navigate("/journals"); // navigate at journals
     getAllJournals();
   };
