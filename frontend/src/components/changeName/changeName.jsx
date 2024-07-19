@@ -28,10 +28,9 @@ export default function ChangeName() {
     }
   };
 
-  const handleChangePassword = async (e) => {
+  const handleChangeName = async (e) => {
+    console.log ("change button is here!!")
     e.preventDefault();
-    const userData = getToken();
-    if (!userData) return;
 
     const newDetails = {
       password: password,
@@ -41,7 +40,7 @@ export default function ChangeName() {
 
     try {
       await axios.put(
-        `${API_URL}/update/${userData.userId}`,
+        `${API_URL}/update/${getToken().userId}`,
         newDetails
       ).then((res) => {
         if (res.status === 200) {
@@ -68,7 +67,7 @@ export default function ChangeName() {
   return (
     <>
     <div className={classes.container}>
-      <form className={classes.wrapper} onSubmit={handleChangePassword}>
+      <form className={classes.wrapper} onSubmit={() => handleChangeName}>
         <img src={logo} alt="Imerologio" />
         <h3 className={classes.username}>{getToken()?.userEmail}</h3>
         <h1 className={classes.h1}>Change your details</h1>
