@@ -65,7 +65,6 @@ export default function Journals() {
     navigate("/newjournal");
   };
 
-  const EditJournal = (_id) => {};
 
   const SortJournals = () => {
     setJournals(
@@ -89,7 +88,7 @@ export default function Journals() {
   return (
     <>
     <div className={classes.container}>
-      <Navbar isEditor={false} reloadPage={reloadPage}/>
+      <Navbar isEditor={false} reloadPage={reloadPage} getAllJournals={getAllJournals} />
       <div className={classes.container}>
         <div className={classes.wrapper}>
           <div className={classes.title}>

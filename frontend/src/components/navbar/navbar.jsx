@@ -10,14 +10,15 @@ import { withRouter } from "react-router-dom";
 const BACKEND_URI = process.env.REACT_APP_BACKEND_URI;
 const API_URL = BACKEND_URI+'/user';
 
-export default function Navbar({ isEditor, reloadPage  }) {
+export default function Navbar({ isEditor, getAllJournals  }) {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleClick = () => {
-    // reloadPage(); //we use this to reload the page
+    window.location.reload();
     navigate("/journals"); // navigate at journals
+    getAllJournals();
   };
 
   const logout = () => {
