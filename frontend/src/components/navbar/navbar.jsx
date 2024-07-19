@@ -16,7 +16,7 @@ export default function Navbar({ isEditor, reloadPage  }) {
   const [dropdownVisible, setDropdownVisible] = useState(false);
 
   const handleClick = () => {
-    reloadPage(); //we use this to reload the page
+    // reloadPage(); //we use this to reload the page
     navigate("/journals"); // navigate at journals
   };
 
