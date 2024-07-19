@@ -1,0 +1,79 @@
+.container{
+    background-color: #e5eeeb;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    background-color: #ffff;
+    height: auto;
+    padding: 40px 50px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;}
+
+
+img{
+    height: auto;
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.wrapper > h3{
+    font-size: 1rem;
+    margin: 15px 0;
+    font-weight: 350;
+}
+
+.h1{
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.wrapper > p{
+    font-size: 1.1rem;
+}
+
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.inputWrapper input{
+    border: none;
+    border-bottom: 1px black solid;
+    border-color: #b1b6b4;
+    margin: 10px 0;
+}
+
+
+.btnWrapper{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.CHbtn {
+    margin-left: 10px ;
+    margin-top: 25px;
+    width: 100px;
+    padding: 4px;
+    background-color: #10d48e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    height: 30px;
+  }
+  
+  .CHbtn:hover{
+    background-color: #28efa8;
+  }

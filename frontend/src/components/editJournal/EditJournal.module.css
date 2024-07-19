@@ -1,0 +1,236 @@
+/* General Styles */
+.journalContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer,
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.3rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.header a {
+  color: #000;
+  text-decoration: none;
+}
+
+.logo {
+  margin: 20px 0;
+  height: auto;
+  width: 299px;
+}
+
+.backIcon,
+.saveIcon,
+.logout {
+  font-size: 1.5rem;
+  color: #009761;
+}
+
+.saveLabel {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #009761;
+}
+
+.row1 {
+  flex-direction: row;
+}
+
+/* Main Content Area */
+.noteContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.noteWrapper {
+  width: 100%;
+  max-width: 800px;
+}
+
+textarea {
+  width: 100%;
+  height: 80vh;
+  padding: 2.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+  scrollbar-width: none;
+  font-size: inherit;
+  border: none;
+}
+
+textarea:focus {
+  outline: none;
+  border: 1px solid #ced4da;
+  border: none;
+}
+
+.journalFooter {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+.journalFooter .emotionDropDown {
+  margin: 0 15px;
+  }
+  
+  .journalFooter .photoUrlInput{
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+.tagsBtn {
+  margin: 0 20px;
+  font-size: 1.5rem;
+}
+
+.tagsBtn:hover {
+  scale: 1.2;
+  transition: 0.3s;
+}
+
+.tagsContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  opacity: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100000;
+}
+
+.closeParent {
+  position: relative;
+}
+
+.closeBtn {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+}
+
+.tagContents {
+  width: 30%;
+  height: 30vh;
+  border: 1px gray solid;
+  padding: 30px;
+  background-color: #e5eeeb;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.tagInput {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  height: auto;
+  font-size: 1.5rem;
+  padding: 20px;
+}
+
+.tagInput input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgb(45, 45, 45);
+}
+
+.tagInput button {
+  outline: none;
+  border: none;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  background-color: #3a9676;
+  border: none;
+  color: rgb(0, 0, 0);
+}
+
+.tagInput button .deleteTag {
+  margin-left: 5px;
+}
+
+.hideTagsContainer {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .backIcon,
+  .saveIcon {
+    font-size: 1.25rem;
+  }
+
+  header,
+  footer {
+    padding: 0.5rem;
+  }
+
+  .logo {
+    margin: 20px 0;
+    height: auto;
+    width: 170px;
+  }
+
+  textarea {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .backIcon,
+  .saveIcon {
+    font-size: 1rem;
+  }
+
+  header,
+  footer {
+    text-align: center;
+  }
+
+  .header a {
+    margin: 0.5rem 0;
+  }
+
+  textarea {
+    height: 60vh;
+  }
+}

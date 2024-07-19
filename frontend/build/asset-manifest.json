@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b591ca19.css",
+    "main.js": "/static/js/main.097c26c9.js",
+    "static/js/453.9c900ba9.chunk.js": "/static/js/453.9c900ba9.chunk.js",
+    "static/media/photo1.png": "/static/media/photo1.138f992db4611f3cc7ac.png",
+    "static/media/404.jpg": "/static/media/404.975d36c574c6f395b378.jpg",
+    "static/media/imerologio-logo.png": "/static/media/imerologio-logo.2b73a5560065200414fc.png",
+    "index.html": "/index.html",
+    "main.b591ca19.css.map": "/static/css/main.b591ca19.css.map",
+    "main.097c26c9.js.map": "/static/js/main.097c26c9.js.map",
+    "453.9c900ba9.chunk.js.map": "/static/js/453.9c900ba9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b591ca19.css",
+    "static/js/main.097c26c9.js"
+  ]
+}

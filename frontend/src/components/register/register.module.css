@@ -1,0 +1,99 @@
+/* login.module.css */
+
+.Container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    flex-direction: row-reverse;
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .right {
+    flex: 1;
+    background-color: #a8b8b2;
+  }
+  
+  .wrapper {
+    padding: 40px;
+    width: 80%;
+    max-width: 80%;
+  }
+  
+  .signupText {
+    margin-bottom: 40px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+  
+  .inputWrapper {
+    margin-bottom: 20px;
+  }
+  
+  .inputWrapper label {
+    margin-bottom: 8px;
+  }
+  
+  .inputWrapper input[type="text"],
+  .inputWrapper input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 0px;
+    background-color: #dce1df;
+    box-sizing: border-box;
+  }
+  .nameWrapper{
+    display: flex;
+    justify-content: space-between;
+
+  }
+.nameWrapper *{
+  width: 48%;
+}
+  
+  .inputWrapper p {
+    font-size: 0.8rem;
+    color: #7c7d7d;
+  }
+  
+  .checkboxWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkboxWrapper input[type="checkbox"] {
+    margin-right: 8px;
+  }
+  
+ .checkboxandlink{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+ }
+ 
+  .registerBtn {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background-color: #10d48e;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+.registerBtn:hover {
+    background-color: #28efa8;
+  }
+  
+  .hr {
+    margin: 40px 0;
+  }

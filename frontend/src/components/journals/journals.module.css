@@ -1,0 +1,137 @@
+.container {
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.container .wrapper {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container .title {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5eeeb;
+}
+
+.JournalWrapper {
+  margin-top: 1vh;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5eeeb;
+  border-radius: 1rem;
+}
+
+.journalCard {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4rem;
+  display: flex;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #10d48e;
+  padding-bottom: 1.8rem;
+}
+
+.journalCard:last-child{
+    border-bottom: none;
+}
+
+.leftSide h4 {
+  font-weight: bold;
+}
+
+.leftSide {
+  cursor: pointer;
+}
+
+.marginLeft {
+  margin-left: 1rem !important;
+}
+
+.imageMask {
+  width: 100px; 
+  height: 100px; 
+  overflow: hidden; 
+  position: relative; 
+  border-radius: 1rem;
+}
+
+.journalCard img {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the image */
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Cover the div while maintaining aspect ratio */
+}
+
+.rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.Icon {
+  margin: 0rem 0.2rem;
+  font-size: 1.4rem;
+  color: #10d48e;
+}
+
+.DeleteIcon {
+  margin: 0rem 2rem;
+  font-size: 2.5rem;
+  color: #fc3037;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.tag {
+  background-color: white;
+  margin: 0.2rem;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+}
+
+.topLineWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vh;
+  width: 79vw;
+}
+
+.topLineWrapper button {
+  background-color: #10d48e;
+  border: none;
+  padding: 0.4rem 1.5rem;
+  color: white;
+  font-weight: bold;
+  border-radius: 0.4rem;
+}
+
+.SortIcon {
+  margin: 0rem 0.2rem;
+  font-size: 2.5rem;
+  color: #10d48e;
+  cursor: pointer;
+}
+
+.AddIcon {
+  font-size: 1.5rem;
+}

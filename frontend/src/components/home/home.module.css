@@ -1,0 +1,143 @@
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header styles */
+.header {
+  height: 10px;
+  width: 100%;
+  background-color: #e5eeeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: auto;
+  width: 50%;
+  max-width: 350px;
+}
+
+/* Body Wrapper styles */
+.bodyWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Top Row styles */
+.topRow {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.right,
+.left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 100px;
+}
+
+.right .photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.left h1 {
+  margin-bottom: 25px;
+}
+
+.left p {
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/* Bottom Row styles */
+.bottomRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  flex-direction: row;
+}
+
+.loginWrapper h2{
+  /* padding: 10px 20px; */
+  color: rgb(49, 48, 48);
+  font-size: 18px;
+  margin: 0 10px;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #10d48e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 100px;
+  border-radius: 5px;
+  width: 200%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #009761;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .topRow {
+    flex-direction: row;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .left p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+}
+
+
+.HiddenloginWrapper{
+  display: none;
+}
+
+
