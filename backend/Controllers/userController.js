@@ -76,7 +76,7 @@ const deleteUser = async (req, res) => {
 const updateName = async (req, res) => {
   try {
     const id = req.params.id
-    const { password, newName, newLastname } = req.body
+    const { password, newName, newLastname } = req.body;
     
     //Find the user by email
     const user = await UserModel.findOne({ _id: id });
@@ -86,9 +86,8 @@ const updateName = async (req, res) => {
       const match = await bcrypt.compare(password, user.password);
       console.log(match);
       if (match) {
-
         // if the user has given the correct credentials then change the name
-        await UserModel.updateOne({$set: {name: newName, lastname : newLastname}})  
+        await UserModel.updateOne({_id:id},{$set: {name: newName, lastname : newLastname}})  
         res.status(200).json({msg: `Users's name successfully updated to ${newName} ${newLastname}`})      
       } else {
         res.status(401).send({ msg: "Password is Wrong! try again." });
@@ -118,7 +117,7 @@ const changePassword = async (req, res) => {
       // if the user has given the correct credentials then change the password
       if (match) {
         bcrypt.hash(newPassword, 10, async function (err, hash) {
-          await UserModel.updateOne({$set: {password: hash}})  
+          await UserModel.updateOne({ _id: id },{$set: {password: hash}})  
           res.status(200).json({msg: `Users's password changed successfully.`})  
         });    
       } else {
@@ -132,6 +131,17 @@ const changePassword = async (req, res) => {
   }
 };
 
+const getUserById = async (req, res) => {
+  const id = req.params.id
+  try {
+    const user = await UserModel.findOne({ _id: id });
+    res.status(200).json(user);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
 module.exports = {
   register,
   getUsers,
@@ -139,4 +149,5 @@ module.exports = {
   deleteUser,
   updateName,
   changePassword,
+  getUserById
 };

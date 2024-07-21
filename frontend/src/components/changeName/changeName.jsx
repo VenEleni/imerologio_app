@@ -15,9 +15,9 @@ export default function ChangeName() {
   const [newLastname, setNewLastname] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
 
   const getToken = () => {
+    let token = localStorage.getItem("token");
     if (token) {
       const userData = jwtDecode(token);
       return userData;
@@ -40,9 +40,11 @@ export default function ChangeName() {
 
     try {
       await axios.put(
-        `${API_URL}/update/${getToken().userId}`,
-        newDetails
-      ).then((res) => {
+        `${API_URL}/update/${getToken().user.userId}`,
+        newDetails,
+            {headers: { "x-auth-token": `${localStorage.getItem("token")}` }
+        
+      }).then((res) => {
         if (res.status === 200) {
           alert("Name changed successfully");
           setPassword("");
@@ -67,7 +69,7 @@ export default function ChangeName() {
   return (
     <>
     <div className={classes.container}>
-      <form className={classes.wrapper} onSubmit={() => handleChangeName}>
+      <form className={classes.wrapper} onSubmit={handleChangeName}>
         <img src={logo} alt="Imerologio" />
         <h3 className={classes.username}>{getToken()?.userEmail}</h3>
         <h1 className={classes.h1}>Change your details</h1>

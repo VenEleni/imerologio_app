@@ -5,7 +5,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/imerologio-logo.png";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
-import { withRouter } from "react-router-dom";
+
 
 const BACKEND_URI = process.env.REACT_APP_BACKEND_URI;
 const API_URL = BACKEND_URI+'/user';
@@ -39,16 +39,16 @@ export default function Navbar({ isEditor, reloadPage}) {
         // console.log(decodedToken.user.userId);
         return decodedToken.user.userId;
       } catch (err) {
-        console.error("Invaled Token", err);
+        console.error("Invalid Token", err);
         return null;
       }
     }
-    return null;
   };
 
-  const getUsers = async () => {
+  const getUserById = async (userId) => {
     try {
-      const res = await axios.get(`${API_URL}/allusers`);
+      const res = await axios.get(`${API_URL}/${userId}`,
+         {headers: { "x-auth-token": `${localStorage.getItem("token")}`} });
       return res.data;
     } catch (error) {
       console.error(error);
@@ -59,13 +59,11 @@ export default function Navbar({ isEditor, reloadPage}) {
     const fetchUser = async () => {
       const userId = getUserIDfromtoken();
       if (userId) {
-        const allUsers = await getUsers();
-        console.log("allUsers");
-        const currentUser = allUsers.find((v) => v._id === userId);
-        setUser(currentUser);
+        let userFound = await getUserById(userId);
+        console.log("User found by id is: ", userFound);
+        setUser (userFound.name);
       }
     };
-
     fetchUser();
   }, []);
 
@@ -142,7 +140,7 @@ export default function Navbar({ isEditor, reloadPage}) {
             </li>
             <li>
               <span onClick={toggleDropdown}>
-                {user ? "Hello " + user.name + "! " : ""}
+                {user ? "Hello " + user + "! " : ""}
               </span>
               <IoIosArrowDropdown
                 className={classes.dropdownList}

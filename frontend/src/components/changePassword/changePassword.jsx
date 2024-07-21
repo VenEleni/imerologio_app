@@ -18,20 +18,22 @@ export default function ChangePassword() {
     const getToken = () => {
         if(token){
             const userData = jwtDecode(token);
-            return userData
+            return userData;
         } else {
-            alert("You are not logged in")
-            navigate("/login")
-            return null
+            alert("You are not logged in");
+            navigate("/login");
+            return null;
         }
     }
 
     const handelChangePassword = async (e) => {
         e.preventDefault();
-        const newDetails = {password : password, newPassword : newPassword}
-
+        
         try {
-            axios.put(`${API_URL}/update/changepassword/${getToken().userId}`, newDetails)   
+          const newDetails = {password : password, newPassword : newPassword}
+            axios.put(`${API_URL}/update/changepassword/${getToken().user.userId}`,
+            newDetails,
+            {headers: { "x-auth-token": `${localStorage.getItem("token")}` }})   
             .then((res) => {
                 if(res.status === 200){
                     setPassword("")
@@ -50,12 +52,6 @@ export default function ChangePassword() {
         setNewPassword("")
         navigate("/")
     }
-
-
-    const repeatCheck = (e) => {
-        
-    }
-
 
   return (
     <>
